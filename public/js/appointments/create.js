@@ -13,7 +13,7 @@ $(function () {
 
   $specialty.change(() => {
     const specialtyId = $specialty.val();
-    const url = `/api/specialties/${specialtyId}/doctors`;
+    const url = `/sireme/public/api/specialties/${specialtyId}/doctors`;
     $.getJSON(url, onDoctorsLoaded);
   });
 
@@ -33,7 +33,7 @@ function onDoctorsLoaded(doctors) {
 function loadHours() {
 	const selectedDate = $date.val();
 	const doctorId = $doctor.val();
-	const url = `/api/schedule/hours?date=${selectedDate}&doctor_id=${doctorId}`;
+	const url = `/sireme/public/api/schedule/hours?date=${selectedDate}&doctor_id=${doctorId}`;
     $.getJSON(url, displayHours);
 }
 
